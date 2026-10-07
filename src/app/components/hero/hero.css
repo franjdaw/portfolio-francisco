@@ -1,0 +1,239 @@
+.hero-section {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  background: radial-gradient(ellipse at top right, rgba(0, 136, 204, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom left, rgba(37, 99, 235, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text {
+  animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-terminal {
+  animation: fadeInUp 1s ease 0.2s backwards;
+  max-width: 100%;
+}
+
+.terminal-window {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
+              0 0 40px rgba(0, 136, 204, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.terminal-btn:hover {
+  transform: scale(1.2);
+}
+
+.terminal-btn.close {
+  background: #ff5f56;
+  box-shadow: 0 0 8px rgba(255, 95, 86, 0.4);
+}
+
+.terminal-btn.minimize {
+  background: #ffbd2e;
+  box-shadow: 0 0 8px rgba(255, 189, 46, 0.4);
+}
+
+.terminal-btn.maximize {
+  background: #27ca40;
+  box-shadow: 0 0 8px rgba(39, 202, 64, 0.4);
+}
+
+.terminal-title {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.terminal-body {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.95);
+  max-height: 280px;
+  overflow: auto;
+}
+
+.terminal-content {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    min-height: calc(100vh - 52px);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    margin: 0 auto 32px;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-terminal {
+    order: -1;
+    max-width: 100%;
+  }
+
+  .terminal-window {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+  }
+
+  .terminal-window {
+    max-width: 100%;
+  }
+
+  .terminal-body {
+    max-height: 240px;
+    padding: 12px;
+  }
+
+  .terminal-content {
+    font-size: 0.7rem;
+  }
+}

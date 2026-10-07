@@ -1,0 +1,17 @@
+<section class="section" id="projects">
+  <div class="container">
+    <h2 class="section-title">Proyectos</h2>
+    <div class="bento-grid">
+      <div class="project-card featured" *ngFor="let project of projects" [class.featured]="project.featured">
+        <div class="project-header">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <span class="project-company">{{ project.company }}</span>
+        </div>
+        <p class="project-description">{{ project.description }}</p>
+        <div class="project-technologies">
+          <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

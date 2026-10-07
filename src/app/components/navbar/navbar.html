@@ -1,0 +1,25 @@
+<nav class="glass-nav navbar" id="home">
+  <div class="container navbar-content">
+    <a href="#" class="logo">
+      <span class="logo-text">&lt;FJ.dev /&gt;</span>
+    </a>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li *ngFor="let link of navLinks">
+        <a [href]="link.href" (click)="closeMenu()">{{ link.name }}</a>
+      </li>
+      <li class="badge-container">
+        <span class="availability-badge">
+          <span class="status-dot"></span>
+          Disponible para trabajar
+        </span>
+      </li>
+    </ul>
+  </div>
+</nav>

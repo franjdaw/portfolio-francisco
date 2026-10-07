@@ -1,0 +1,23 @@
+<section class="section" id="experience">
+  <div class="container">
+    <h2 class="section-title">Experiencia y Formación</h2>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let exp of experiences; let i = index">
+        <div class="timeline-dot" [class.work]="exp.type === 'work'" [class.education]="exp.type === 'education'">
+          <span class="dot-icon">{{ exp.type === 'work' ? '💼' : '🎓' }}</span>
+        </div>
+        <div class="timeline-content glass-card">
+          <div class="timeline-header">
+            <h3 class="timeline-title">{{ exp.title }}</h3>
+            <span class="timeline-period">{{ exp.period }}</span>
+          </div>
+          <p class="timeline-company">{{ exp.company }}</p>
+          <p class="timeline-description">{{ exp.description }}</p>
+          <div class="timeline-technologies">
+            <span class="tech-tag" *ngFor="let tech of exp.technologies">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
