@@ -21,7 +21,8 @@ export class Projects {
       description: 'Proyecto propio de servicios de cloud y hosting. Gestión de servidores Linux, despliegue con Docker y PM2, y virtualización de recursos.',
       technologies: ['Linux', 'Docker', 'PM2', 'Virtualización', 'Cloud'],
       featured: false,
-      company: 'Proyecto Propio'
+      company: 'Proyecto Propio',
+      url: 'https://moodcloud.es'
     },
     {
       title: 'Desarrollador Web Freelance',

@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="section-title">Proyectos</h2>
     <div class="bento-grid">
-      <div class="project-card featured" *ngFor="let project of projects" [class.featured]="project.featured">
+      <div class="project-card" *ngFor="let project of projects" [class.featured]="project.featured">
         <div class="project-header">
           <h3 class="project-title">{{ project.title }}</h3>
           <span class="project-company">{{ project.company }}</span>
@@ -11,6 +11,7 @@
         <div class="project-technologies">
           <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
         </div>
+        <a *ngIf="project.url" [href]="project.url" target="_blank" rel="noopener" class="project-link-btn">Visitar Sitio</a>
       </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
 main {
   display: block;
-  padding-top: 68px;
+  padding-top: 80px;
 }
 
 @media (max-width: 968px) {
   main {
-    padding-top: 52px;
+    padding-top: 70px;
   }
 }

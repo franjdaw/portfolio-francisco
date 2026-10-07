@@ -16,7 +16,7 @@ export class Hero {
     email: 'franciscojosejimenez24@gmail.com',
     phone: '+34 602 453 829',
     linkedin: 'linkedin.com/in/franciscojose-jimenez',
-    summary: 'Estudiante de 2.º curso de DAW. Experiencia práctica en Frontend (React, Angular), desarrollo Backend (Python, FastAPI, REST APIs), administración e infraestructura (Linux, Docker, PM2) y automatización con n8n.',
+    summary: 'Estudiante de 2.º curso de DAW.',
     technologies: ['React', 'Angular', 'Python', 'FastAPI', 'Docker', 'Linux', 'n8n', 'PM2']
   };
 }
